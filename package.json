@@ -1,0 +1,18 @@
+{
+  "name": "@shwilliam/basesheet",
+  "version": "0.1.0",
+  "description": "A better CSS foundation",
+  "main": "basesheet.css",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shwilliam/basesheet.git"
+  },
+  "keywords": ["css"],
+  "author": "William L",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shwilliam/basesheet/issues"
+  },
+  "homepage": "https://github.com/shwilliam/basesheet#readme"
+}
