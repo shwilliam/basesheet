@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basesheet.css</title>
+    <link rel="stylesheet" href="./basesheet.css" />
+
+    <style>
+      body {
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">title</h1>
+      <h2 class="subtitle">subtitle</h2>
+      <h3 class="subtitle -small">small subtitle</h3>
+
+      <nav>
+        <ul>
+          <li><a href="#">a</a></li>
+          <li><a href="#">nav</a></li>
+          <li><a href="#">list</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <span class="rule"></span>
+
+    <main>
+      <p>
+        Lorem ipsum dolor sit amet,
+        <a href="#">consectetuer adipiscing</a> elit. Ut purus elit, vestibulum
+        ut, placerat ac, <span class="highlight -grey">adipiscing vitae,</span>
+        felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget,
+        consectetuer id, vulputate a, magna. Donec vehicula augue eu neque.
+        Pellentesque habitant morbi tristique senectus et
+        <span class="del">netus et malesuada</span> fames ac turpis egestas.
+        Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus
+        vestibulum urna fringilla ultrices.
+        <span class="highlight">Phasellus eu tellus</span> sit amet tortor
+        gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra
+        ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus.
+        Morbi dolor nulla,
+        <span class="highlight -subtle"
+          >malesuada eu, pulvinar at, mollis ac, nulla.</span
+        >
+        Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh
+        mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci
+        sit amet orci dignissim rutrum.
+      </p>
+
+      <span class="bold">bold</span><br />
+      <span class="italic">italic</span><br />
+      <span class="heavy">heavy</span><br />
+      <span class="small">small</span><br />
+      <span class="del">del</span><br />
+      <span class="info">info</span><br />
+      <span class="highlight">highlight</span><br />
+      <span class="highlight -subtle">highlight subtle</span><br />
+      <span class="highlight -grey">highlight grey</span><br />
+      <span class="highlight -grey radius">radius</span><br />
+
+      <ul>
+        <li>an</li>
+        <li>unordered</li>
+        <li>
+          list
+          <ul>
+            <li>in an</li>
+            <li>unordered</li>
+            <li>
+              list
+              <ul>
+                <li>in an</li>
+                <li>unordered</li>
+                <li>list</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ol>
+        <li>an</li>
+        <li>ordered</li>
+        <li>list</li>
+      </ol>
+
+      <details>
+        <summary>More info</summary>
+        Something small enough to escape casual notice.
+      </details>
+
+      <blockquote cite="https://www.huxley.net/bnw/four.html">
+        <p>
+          Words can be like X-rays, if you use them properly—they’ll go through
+          anything. You read and you’re pierced.
+        </p>
+        <footer>—Aldous Huxley, <cite>Brave New World</cite></footer>
+      </blockquote>
+
+      <form action="">
+        <label for="input-1">input 1</label>
+        <input
+          type="text"
+          placeholder="type something..."
+          name="input-1"
+          id="input-1"
+        />
+
+        <label for="input-2">input 2</label>
+        <input
+          type="text"
+          placeholder="type something..."
+          name="input-2"
+          id="input-2"
+          required
+        />
+
+        <button type="submit">send</button>
+      </form>
+    </main>
+  </body>
+</html>
