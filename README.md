@@ -10,6 +10,26 @@
 - Dispatches single taps without delay
 - Color, font, layout, and sizing custom variables
 
+## Usage
+
+### CDN
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@shwilliam/basesheet@latest/basesheet.css"
+/>
+```
+
+### NPM package
+
+- Add this package as a dependency (`npm i @shwilliam/basesheet`)
+- Import it in your JavaScript file
+
+```js
+import '@shwilliam/basesheet'
+```
+
 ## FAQ
 
 ### What's up with these long class names?
