@@ -7,11 +7,9 @@
   --color-black: #222;
   --color-grey: #777;
   --color-stone: #f7f7f7;
-  --color-banana: #f5d652;
-  --color-banana--light: #f5d65280;
+  --color-banana: #f5d65280;
   --color-canary: #fff5ca90;
   --color-azure: #6f92ba;
-  --color-azure--light: #6f92bad0;
   --color-peach: #fee5da;
 
   --color-text: var(--color-black);
@@ -19,7 +17,6 @@
   --color-sheet: var(--color-white);
   --color-link: var(--color-azure);
   --color-accent: var(--color-azure);
-  --color-accent--alt: var(--color-azure--light);
   --color-highlight: var(--color-banana);
   --color-neutral: var(--color-grey);
 
@@ -354,8 +351,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--color-accent--alt);
-  border-color: var(--color-accent--alt);
+  opacity: 0.8;
 }
 
 /* dispatch single taps w/o delay */
@@ -459,7 +455,7 @@ textarea,
   background: linear-gradient(
     170deg,
     var(--color-canary) 0%,
-    var(--color-banana--light) 100%
+    var(--color-banana) 100%
   );
   padding-left: 0.2em;
   padding-right: 0.2em;
