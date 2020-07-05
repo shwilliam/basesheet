@@ -626,7 +626,7 @@ textarea,
   display: none !important;
 }
 
-.hide.-screens {
+.hide--screens {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
