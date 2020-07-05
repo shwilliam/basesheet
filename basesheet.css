@@ -626,7 +626,7 @@ textarea,
   display: none !important;
 }
 
-.hide--screens {
+.hide-screens {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -635,13 +635,13 @@ textarea,
 }
 
 @media (max-width: 44.99em) {
-  .hide--mobile {
+  .hide.-mobile {
     display: none !important;
   }
 }
 
 @media (min-width: 45em) {
-  .hide--desktop {
+  .hide.-desktop {
     display: none !important;
   }
 }
