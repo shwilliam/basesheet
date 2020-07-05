@@ -1,6 +1,6 @@
 {
   "name": "@shwilliam/basesheet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A better CSS foundation",
   "main": "basesheet.css",
   "scripts": {},
