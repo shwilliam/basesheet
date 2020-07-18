@@ -17,7 +17,7 @@
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@shwilliam/basesheet@latest/basesheet.css"
+  href="https://unpkg.com/@shwilliam/basesheet@latest"
 />
 ```
 
