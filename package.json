@@ -5,7 +5,8 @@
   "main": "dist/basesheet.css",
   "scripts": {
     "start": "stylus -w src/basesheet.styl -o dist/basesheet.css",
-    "build": "stylus src/basesheet.styl -o dist/basesheet.css"
+    "build": "stylus src/basesheet.styl -o dist/basesheet.css",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
