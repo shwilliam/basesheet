@@ -1,0 +1,437 @@
+/****************
+* basesheet.css *
+****************/
+
+// breakpoints
+
+bp = {
+  sm: 25em,
+  md: 45em,
+  lg: 90em
+}
+
+breakpoints(class)
+  for key, value in bp
+    @media (min-width value)
+      .{class}\@{key}
+        {block}
+
+// stylus variables
+
+font-sans = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+color-white = #fff
+color-black = #222
+color-grey = #777
+color-stone = #f7f7f7
+color-banana = #f5d65280
+color-canary = #fff5ca90
+color-azure = #6f92ba
+color-peach = #fee5da
+
+color-background = color-stone
+color-text = color-black
+color-border = color-text
+color-sheet = color-white
+color-link = color-azure
+color-accent = color-azure
+color-highlight = color-banana
+color-neutral = color-grey
+
+space = {
+  xxx-small: 0.05em,
+  xx-small: 0.15em,
+  x-small: 0.25em,
+  small: 0.5em,
+  medium: 1em,
+  large: 2em,
+  x-large: 3em,
+  xx-large: 4em,
+  xxx-large: 6em
+}
+
+type = {
+  xxx-small: 55%,
+  xx-small: 65%,
+  x-small: 75%,
+  small: 85%,
+  medium: 100%,
+  large: 125%,
+  x-large: 150%,
+  xx-large: 200%,
+  xxx-large: 300%
+}
+
+// css variables
+
+:root
+  for key, value in space
+    --space-{key} value
+  for key, value in type
+    --type-{key} value
+
+// reset
+
+*, *:before, *:after
+  box-sizing border-box
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin 0
+  padding 0
+  border 0
+  font-size 100%
+  font inherit
+  vertical-align baseline
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display block
+
+body
+  font-family font-sans
+  line-height 1.25
+
+ol, ul
+  padding 0 0 0 space.medium
+
+ul li ul, ul li ol, ol li ol, ol li ul
+  margin space.small 0 space.medium 0
+
+blockquote, q
+  quotes none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content ''
+  content none
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+textarea
+  resize vertical
+
+h1, h2, h3, h4, h5, h6
+  font-size inherit
+  font-weight inherit
+
+button, input, optgroup, select, textarea
+  padding 0
+  line-height inherit
+  color inherit
+
+audio, canvas, embed, iframe, img, object, svg, video
+  display block
+
+img, video
+  max-width 100%
+  height auto
+
+// sane defaults
+
+*, *:before, *:after
+  // allow adding border by only specifying `border-width`
+  // https://github.com/tailwindcss/tailwindcss/pull/116
+  border 0 solid color-border
+
+html
+  min-height 100%
+  overflow-x: hidden;
+  scroll-padding 10em 0 0 0
+  font-size 16px
+
+body
+  min-height 100%
+  overflow-x: hidden;
+  scroll-behavior smooth
+  text-rendering optimizeSpeed
+  line-height 1.5
+  color color-text
+  background-color color-sheet
+
+:focus
+  outline-offset 0.15em
+  outline color-accent solid 0.3em
+
+::selection, ::-moz-selection
+  color color-text
+  background-color color-highlight
+
+label
+  display block
+  margin space.small 0 0 0
+  font-weight bold
+  letter-spacing -0.02em
+  text-align left
+
+input[type='text'], input[type='search'], input[type='email'],
+input[type='password'], textarea, button, input, select
+  font-size type.medium
+  font-weight 300
+
+input[type='text'], input[type='search'], input[type='email'],
+input[type='password'], textarea
+  transition all 0.2s ease
+  display block
+  width 100%
+  margin 0 0 space.small 0
+  padding 0.3em 0.5em
+  text-align inherit
+  background-color color-white
+  border-width 0.1em
+  border-radius 0
+
+input[type='text']:focus, input[type='search']:focus, input[type='email']:focus,
+input[type='password']:focus, textarea:focus
+  outline none
+  border-color color-accent !important
+
+button
+  cursor pointer
+  margin space.small 0
+  padding 0.3em 1em
+  font-size type.medium
+  font-weight 600
+  text-align inherit
+  border 0.1em solid color-accent
+  background-color color-accent
+  color color-white
+  border-radius 0
+  transition color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease
+  line-height normal
+  -webkit-appearance none
+  box-shadow none
+
+button:hover
+  opacity 0.8
+
+a, a:visited
+  color inherit
+  transition color 0.2s ease, text-decoration-color 0.2s ease
+  text-decoration-thickness 0.1em
+
+a:hover
+  color color-link
+  text-decoration-color color-link
+
+hr
+ border-top-width 2px
+
+blockquote
+  quotes none
+  margin 0
+
+blockquote p:before
+  content '“'
+  display inline-block
+  margin-left -0.5em
+  margin-right 0.1em
+
+blockquote p:after
+  content '”'
+  display inline-block
+  margin-right -0.1em
+
+blockquote cite
+  display block
+  font-size type.x-small
+  font-weight 700
+
+details
+  margin: 0 0 space.small 0
+  transition all 0.3s ease
+  line-height 1.5
+
+details[open] summary
+  margin-bottom space.small
+  outline none
+  color color-link
+  text-decoration underline
+
+details ::-webkit-details-marker
+  display none
+
+summary
+  transition color 0.2s ease
+  margin space.small 0 0 0
+  font-weight 600
+  outline none
+  list-style-type none
+  text-decoration underline !important
+  list-style-position outside
+
+@media (min-width: bp[md])
+  summary
+    margin-top 0
+    list-style-position unset
+
+summary:hover
+  cursor pointer
+  color color-link
+
+summary:focus
+  outline initial
+
+nav > ol, nav > ul
+  list-style none
+  padding 0
+  margin 0
+
+nav > ol > li, nav > ul > li
+  display inline-block
+
+// svg fill falls back to text color
+svg:not([fill])
+  fill currentColor
+
+[role=button], button
+  cursor pointer
+
+[disabled]
+  cursor not-allowed
+
+// dispatch single taps w/o delay
+a, area, button, input, label, select, summary, textarea, [tabindex]
+  touch-action manipulation
+
+@media (prefers-reduced-motion: reduce)
+  *
+    animation-duration 0.01ms !important
+    animation-iteration-count 1 !important
+    transition-duration 0.01ms !important
+    scroll-behavior auto !important
+
+// layout
+
+for key, value in space
+  .space-{key}
+    margin value
+  .space-{key}--top
+    margin-top value
+  .space-{key}--right
+    margin-right value
+  .space-{key}--bottom
+    margin-bottom value
+  .space-{key}--left
+    margin-left value
+
+.flush
+  margin 0 !important
+
+.flush--top
+  margin-top 0 !important
+
+.flush--bottom
+  margin-bottom 0 !important
+
++breakpoints(text-center)
+  text-align center
+
++breakpoints(text-right)
+  text-align right
+
++breakpoints(text)
+  display flex
+  align-items center
+  padding 0
+
+@media print
+  .flex
+    display block
+
++breakpoints('flex.-space-between')
+  justify-content space-between
+
++breakpoints('flex.-wrap')
+  flex-wrap wrap
+
++breakpoints('flex.-center')
+  justify-content center
+  align-items center
+
++breakpoints('flex.-center-h')
+  justify-content center
+
++breakpoints('flex.-center-v')
+  align-items center
+
+// text
+
+for key, value in type
+  .type-{key}
+    font-size value
+
+.invert
+  color color-white
+
+.info
+  color color-neutral
+
+.small
+  font-size type.x-small
+  line-height 1.5
+
+.del
+  text-decoration line-through
+
+.bold
+  font-weight bold
+
+.italic
+  font-style italic
+
+.heavy
+  font-size type.large
+  font-weight 500
+
+.upcase
+  text-transform uppercase
+
+.undecorated
+  text-decoration none !important
+
+.highlight
+  background linear-gradient(170deg, color-canary 0%, color-banana 100%)
+  padding-left 0.2em
+  padding-right 0.2em
+  margin-left -0.2em
+  margin-right -0.2em
+
+.highlight.-subtle
+  background linear-gradient(90deg, color-peach 0%, color-canary 100%)
+
+.highlight.-grey
+  background color-grey
+  color color-white
+
+.radius
+  border-radius 0.1em
+
+// animation
+
+.fade-in
+  opacity 0
+  animation fade-in 0.3s ease-out forwards
+
+@keyframes fade-in
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+// visibility
+
++breakpoints(hide)
+  display none !important
+
++breakpoints(hide-screens)
+  clip rect(1px, 1px, 1px, 1px)
+  position absolute !important
+  height 1px
+  width 1px
+  overflow hidden
