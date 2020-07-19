@@ -4,11 +4,12 @@
 
 ## Overview
 
-- Lightweight reset (based on [Eric Meyer's CSS reset v2](https://meyerweb.com/eric/tools/css/reset/))
 - Helpful utility classes
+- Typography and spacing custom variables
+- Responsive class-name suffixes (eg. `.hide@md`)
+- Lightweight reset (based on [Eric Meyer's CSS reset v2](https://meyerweb.com/eric/tools/css/reset/))
 - Disables animations based on `prefers-reduced-motion`
 - Dispatches single taps without delay
-- Color, font, layout, and sizing custom variables
 
 ## Usage
 
