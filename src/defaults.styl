@@ -1,0 +1,170 @@
+// sane defaults
+
+*, *:before, *:after
+  // allow adding border by only specifying `border-width`
+  // https://github.com/tailwindcss/tailwindcss/pull/116
+  border 0 solid color-border
+
+html
+  min-height 100%
+  overflow-x: hidden;
+  scroll-padding 10em 0 0 0
+  font-size 16px
+
+body
+  min-height 100%
+  overflow-x: hidden;
+  scroll-behavior smooth
+  text-rendering optimizeSpeed
+  line-height 1.5
+  color color-text
+  background-color color-sheet
+
+:focus
+  outline-offset 0.15em
+  outline color-accent solid 0.3em
+
+::selection, ::-moz-selection
+  color color-text
+  background-color color-highlight
+
+label
+  display block
+  margin space.small 0 0 0
+  font-weight bold
+  letter-spacing -0.02em
+  text-align left
+
+input[type='text'], input[type='search'], input[type='email'],
+input[type='password'], textarea, button, input, select
+  font-size type.medium
+  font-weight 300
+
+input[type='text'], input[type='search'], input[type='email'],
+input[type='password'], textarea
+  transition all 0.2s ease
+  display block
+  width 100%
+  margin 0 0 space.small 0
+  padding 0.3em 0.5em
+  text-align inherit
+  background-color color-white
+  border-width 0.1em
+  border-radius 0
+
+input[type='text']:focus, input[type='search']:focus, input[type='email']:focus,
+input[type='password']:focus, textarea:focus
+  outline none
+  border-color color-accent !important
+
+button
+  cursor pointer
+  margin space.small 0
+  padding 0.3em 1em
+  font-size type.medium
+  font-weight 600
+  text-align inherit
+  border 0.1em solid color-accent
+  background-color color-accent
+  color color-white
+  border-radius 0
+  transition color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease
+  line-height normal
+  -webkit-appearance none
+  box-shadow none
+
+button:hover
+  opacity 0.8
+
+a, a:visited
+  color inherit
+  transition color 0.2s ease, text-decoration-color 0.2s ease
+  text-decoration-thickness 0.1em
+
+a:hover
+  color color-link
+  text-decoration-color color-link
+
+hr
+ border-top-width 2px
+
+blockquote
+  quotes none
+  margin 0
+
+blockquote p:before
+  content '"'
+  display inline-block
+
+blockquote p:after
+  content '"'
+  display inline-block
+
+blockquote cite
+  display block
+  font-size type.x-small
+  font-weight 700
+
+details
+  margin: 0 0 space.small 0
+  transition all 0.3s ease
+  line-height 1.5
+
+details[open] summary
+  margin-bottom space.small
+  outline none
+  color color-link
+  text-decoration underline
+
+details ::-webkit-details-marker
+  display none
+
+summary
+  transition color 0.2s ease
+  margin space.small 0 0 0
+  font-weight 600
+  outline none
+  list-style-type none
+  text-decoration underline !important
+  list-style-position outside
+
+@media (min-width: bp[md])
+  summary
+    margin-top 0
+    list-style-position unset
+
+summary:hover
+  cursor pointer
+  color color-link
+
+summary:focus
+  outline initial
+
+nav > ol, nav > ul
+  list-style none
+  padding 0
+  margin 0
+
+nav > ol > li, nav > ul > li
+  display inline-block
+
+// svg fill falls back to text color
+svg:not([fill])
+  fill currentColor
+
+[role=button], button
+  cursor pointer
+
+[disabled]
+  cursor not-allowed
+
+// dispatch single taps w/o delay
+a, area, button, input, label, select, summary, textarea, [tabindex]
+  touch-action manipulation
+
+@media (prefers-reduced-motion: reduce)
+  *
+    animation-duration 0.01ms !important
+    animation-iteration-count 1 !important
+    transition-duration 0.01ms !important
+    scroll-behavior auto !important

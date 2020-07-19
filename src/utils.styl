@@ -1,0 +1,129 @@
+// layout
+
+for key, value in space
+  .space-{key}
+    margin value
+  .space-{key}--top
+    margin-top value
+  .space-{key}--right
+    margin-right value
+  .space-{key}--bottom
+    margin-bottom value
+  .space-{key}--left
+    margin-left value
+
+.flush
+  margin 0 !important
+
+.flush--top
+  margin-top 0 !important
+
+.flush--bottom
+  margin-bottom 0 !important
+
++breakpoints(text-center)
+  text-align center
+
++breakpoints(text-right)
+  text-align right
+
++breakpoints(text)
+  display flex
+  align-items center
+  padding 0
+
+@media print
+  .flex
+    display block
+
++breakpoints('flex.-space-between')
+  justify-content space-between
+
++breakpoints('flex.-wrap')
+  flex-wrap wrap
+
++breakpoints('flex.-center')
+  justify-content center
+  align-items center
+
++breakpoints('flex.-center-h')
+  justify-content center
+
++breakpoints('flex.-center-v')
+  align-items center
+
+// text
+
+for key, value in type
+  .type-{key}
+    font-size value
+
+.invert
+  color color-white
+
+.info
+  color color-neutral
+
+.small
+  font-size type.x-small
+  line-height 1.5
+
+.del
+  text-decoration line-through
+
+.bold
+  font-weight bold
+
+.italic
+  font-style italic
+
+.heavy
+  font-size type.large
+  font-weight 500
+
+.upcase
+  text-transform uppercase
+
+.undecorated
+  text-decoration none !important
+
+.highlight
+  background linear-gradient(170deg, color-canary 0%, color-banana 100%)
+  padding-left 0.2em
+  padding-right 0.2em
+  margin-left -0.2em
+  margin-right -0.2em
+
+.highlight.-subtle
+  background linear-gradient(90deg, color-peach 0%, color-canary 100%)
+
+.highlight.-grey
+  background color-grey
+  color color-white
+
+.radius
+  border-radius 0.1em
+
+// animation
+
+.fade-in
+  opacity 0
+  animation fade-in 0.3s ease-out forwards
+
+@keyframes fade-in
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+// visibility
+
++breakpoints(hide)
+  display none !important
+
++breakpoints(hide-screens)
+  clip rect(1px, 1px, 1px, 1px)
+  position absolute !important
+  height 1px
+  width 1px
+  overflow hidden

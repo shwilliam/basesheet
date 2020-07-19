@@ -1,0 +1,67 @@
+// variables
+
+bp = {
+  sm: 25em,
+  md: 45em,
+  lg: 90em
+}
+
+breakpoints(class)
+  for key, value in bp
+    @media (min-width value)
+      .{class}\@{key}
+        {block}
+
+font-sans = -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+color-white = #fff
+color-black = #222
+color-grey = #777
+color-stone = #f7f7f7
+color-banana = #f5d65280
+color-canary = #fff5ca90
+color-azure = #6f92ba
+color-peach = #fee5da
+
+color-background = color-stone
+color-text = color-black
+color-border = color-text
+color-sheet = color-white
+color-link = color-azure
+color-accent = color-azure
+color-highlight = color-banana
+color-neutral = color-grey
+
+space = {
+  xxx-small: 0.05em,
+  xx-small: 0.15em,
+  x-small: 0.25em,
+  small: 0.5em,
+  medium: 1em,
+  large: 2em,
+  x-large: 3em,
+  xx-large: 4em,
+  xxx-large: 6em
+}
+
+type = {
+  xxx-small: 55%,
+  xx-small: 65%,
+  x-small: 75%,
+  small: 85%,
+  medium: 100%,
+  large: 125%,
+  x-large: 150%,
+  xx-large: 200%,
+  xxx-large: 300%
+}
+
+// css variables
+
+:root
+  for key, value in space
+    --space-{key} value
+  for key, value in type
+    --type-{key} value
+
